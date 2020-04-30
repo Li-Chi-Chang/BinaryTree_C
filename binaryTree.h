@@ -12,6 +12,7 @@
 #define MAXCROSS 10
 typedef struct treeData
 {
+    int CostFromStartPoint;
     char parentX;
     char parentY;
     char parentDir;
@@ -24,6 +25,9 @@ typedef struct treeData
 
     char crossX[MAXCROSS], crossY[MAXCROSS], crossDir[MAXCROSS];
     char location[2];
+
+    //for dijkstra
+    char unchooseX[MAXCROSS],unchooseY[MAXCROSS], unchooseDir[MAXCROSS];
 }binaryTreeData;
 
 typedef struct tree
@@ -34,6 +38,8 @@ typedef struct tree
     struct tree *rightChild;
 
     struct tree *cross[MAXCROSS];
+    //for dijkstra
+    struct tree *unchoose[MAXCROSS];
 }binaryTree;
 
 

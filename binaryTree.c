@@ -24,6 +24,7 @@ binaryTree* initTreeNode(binaryTreeData data)
     for(i=0;i<MAXCROSS;i++)
     {
         newNode->cross[i] = NULL;
+        newNode->unchoose[i] = NULL;
     }
     return newNode;
 }
